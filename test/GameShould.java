@@ -9,5 +9,6 @@ public class GameShould {
     calculate_well_placed_and_misplaced_pegs() {
         assertThat(new Game(0, 0, 0, 0).guess(1, 1, 1, 1), is(new int[]{0, 0}));
         assertThat(new Game(0, 0, 0, 0).guess(0, 1, 1, 1), is(new int[]{1, 0}));
+        assertThat(new Game(0, 0, 0, 0).guess(0, 0, 0, 0), is(new int[]{4, 0}));
     }
 }

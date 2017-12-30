@@ -15,6 +15,12 @@ public class Game {
         int wellPlaced = 0;
         if (this.firstPeg == firstPegGuess)
             wellPlaced++;
+        if (this.secondPeg == secondPegGuess)
+            wellPlaced++;
+        if (this.thirdPeg == thirdPegGuess)
+            wellPlaced++;
+        if (this.fourthPeg == fourthPegGuess)
+            wellPlaced++;
         return new int[]{wellPlaced, 0};
     }
 }
