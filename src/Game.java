@@ -11,7 +11,10 @@ public class Game {
         this.fourthPeg = fourthPeg;
     }
 
-    public int[] guess(int firstPeg, int secondPeg, int thirdPeg, int fourthPeg) {
-        return new int[]{0, 0};
+    public int[] guess(int firstPegGuess, int secondPegGuess, int thirdPegGuess, int fourthPegGuess) {
+        int wellPlaced = 0;
+        if (this.firstPeg == firstPegGuess)
+            wellPlaced++;
+        return new int[]{wellPlaced, 0};
     }
 }
