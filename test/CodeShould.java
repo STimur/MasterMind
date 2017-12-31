@@ -16,5 +16,9 @@ public class CodeShould {
         assertThat(new Code(intArray(0, 0, 0, 0)).guess(intArray(0, 0, 0, 0)), is(new int[]{4, 0}));
     }
 
-
+    @Test
+    public void
+    calculate_misplaced_pegs() {
+        assertThat(new Code(intArray(0, 0, 0, 1)).guess(intArray(2, 2, 2, 0)), is(new int[]{0, 1}));
+    }
 }
