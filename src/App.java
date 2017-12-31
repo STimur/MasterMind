@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 public class App {
     public static void main(String[] args) {
         Game game = new Game();
+        System.out.println("Enter you guess:");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while (!game.isFinished) {
             String str = readLine(br);
@@ -17,6 +18,7 @@ public class App {
             int[] answer = game.guess(pegsGuess);
             System.out.printf("wellplaced: %d misplaced: %d\n", answer[0], answer[1]);
         }
+        System.out.println("\nCongratulations! You broke the code.");
     }
 
     private static String readLine(BufferedReader br) {
