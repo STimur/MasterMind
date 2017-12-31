@@ -9,8 +9,13 @@ public class Game {
 
     public int[] guess(int[] pegs) {
         int[] answer = code.guess(pegs);
-        if (answer[0] == 4)
+        if (isAllPegsAreGuessed(answer))
             isFinished = true;
         return answer;
+    }
+
+    private boolean isAllPegsAreGuessed(int[] answer) {
+        int nOfWellPlacedPegs = answer[0];
+        return nOfWellPlacedPegs == 4;
     }
 }
