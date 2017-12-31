@@ -11,15 +11,15 @@ public class CodeShould {
     @Test
     public void
     calculate_wellplaced_pegs() {
-        assertThat(new Code(intArray(0, 0, 0, 0)).guess(intArray(1, 1, 1, 1)), is(new int[]{0, 0}));
-        assertThat(new Code(intArray(0, 0, 0, 0)).guess(intArray(0, 1, 1, 1)), is(new int[]{1, 0}));
-        assertThat(new Code(intArray(0, 0, 0, 0)).guess(intArray(0, 0, 0, 0)), is(new int[]{4, 0}));
+        assertThat(new Code(intArray(0, 0, 0, 0)).guess(intArray(1, 1, 1, 1)), is(intArray(0, 0)));
+        assertThat(new Code(intArray(0, 0, 0, 0)).guess(intArray(0, 1, 1, 1)), is(intArray(1, 0)));
+        assertThat(new Code(intArray(0, 0, 0, 0)).guess(intArray(0, 0, 0, 0)), is(intArray(4, 0)));
     }
 
     @Test
     public void
     calculate_misplaced_pegs() {
-        assertThat(new Code(intArray(0, 0, 0, 1)).guess(intArray(2, 2, 2, 0)), is(new int[]{0, 1}));
-        assertThat(new Code(intArray(1, 1, 1, 0)).guess(intArray(0, 2, 2, 2)), is(new int[]{0, 1}));
+        assertThat(new Code(intArray(0, 0, 0, 1)).guess(intArray(2, 2, 2, 0)), is(intArray(0, 1)));
+        assertThat(new Code(intArray(1, 1, 1, 0)).guess(intArray(0, 2, 2, 2)), is(intArray(0, 1)));
     }
 }
