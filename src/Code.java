@@ -11,9 +11,19 @@ public class Code {
         for (int i = 0; i < pegs.length; i++) {
             if (this.pegs[i] == pegs[i])
                 wellPlaced++;
-            else if (pegs[i] == this.pegs[0] || pegs[i] == this.pegs[1] || pegs[i] == this.pegs[2])
+            else if (checkOtherPositionsFor(pegs[i], i))
                 misplaced++;
         }
         return new int[]{wellPlaced, misplaced};
+    }
+
+    private boolean checkOtherPositionsFor(int peg, int i) {
+        for (int j = 0; j < pegs.length; j++) {
+            if (j == i)
+                continue;
+            if (peg == pegs[j])
+                return true;
+        }
+        return false;
     }
 }
