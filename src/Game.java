@@ -8,6 +8,9 @@ public class Game {
     }
 
     public int[] guess(int[] pegs) {
-        return code.guess(pegs);
+        int[] answer = code.guess(pegs);
+        if (answer[0] == 4)
+            isFinished = true;
+        return answer;
     }
 }

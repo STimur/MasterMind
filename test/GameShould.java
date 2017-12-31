@@ -26,4 +26,12 @@ public class GameShould {
         assertThat(new GameMock().guess(intArray(0, 0, 0, 0)), is(intArray(0, 0)));
         assertThat(new GameMock().guess(intArray(1, 3, 2, 4)), is(intArray(2, 2)));
     }
+
+    @Test
+    public void
+    be_finished_after_all_pegs_are_guessed() {
+        GameMock game = new GameMock();
+        assertThat(game.guess(intArray(1, 2, 3, 4)), is(intArray(4, 0)));
+        assertThat(game.isFinished, is(true));
+    }
 }
