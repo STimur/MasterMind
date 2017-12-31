@@ -1,7 +1,13 @@
 public class Game {
+    protected Code code;
+
     public boolean isFinished;
 
-    public int[] guess(int[] ints) {
-        return new int[]{0, 0};
+    public Game() {
+        this.code = new Code(CodeGenerator.generate());
+    }
+
+    public int[] guess(int[] pegs) {
+        return code.guess(pegs);
     }
 }
