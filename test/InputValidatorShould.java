@@ -12,4 +12,10 @@ public class InputValidatorShould {
     throw_exception_when_input_contain_letter() {
         InputValidator.validate("a124");
     }
+
+    @Test(expected = InputValidator.ValidationException.class)
+    public void
+    throw_exception_when_input_contain_digit_out_of_range() {
+        InputValidator.validate("6124");
+    }
 }
