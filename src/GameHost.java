@@ -2,18 +2,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class App {
+public class GameHost {
     private final Game game;
     private final BufferedReader bufferedReader;
     private String playerInput;
 
-    public App() {
+    public GameHost() {
         game = new Game();
         bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     }
 
     public static void main(String[] args) {
-        new App().start();
+        new GameHost().start();
     }
 
     private void start() {
@@ -32,7 +32,7 @@ public class App {
             readPlayerInput();
             validateInput();
             printGuessResult();
-        } catch (NumberFormatException e) {
+        } catch (InputValidator.ValidationException e) {
             System.out.println("Wrong input! You should type 4 integers, e.g.: 1122\n");
         } catch (IOException e) {
             System.out.println("Something wrong with IO subsystem! Contact sysadmin, if the problem persists.\n");
@@ -44,7 +44,7 @@ public class App {
     }
 
     private void printGuessResult() {
-        int[] answer = game.guess(parseInput(playerInput));
+        int[] answer = game.guess(InputParser.parse(playerInput));
         System.out.printf("wellplaced: %d misplaced: %d\n\n", answer[0], answer[1]);
     }
 
@@ -53,16 +53,6 @@ public class App {
     }
 
     private void validateInput() {
-        if (playerInput.length() != 4)
-            throw new NumberFormatException();
-    }
-
-    private int[] parseInput(String str) {
-        return new int[]{
-                Integer.valueOf(Integer.valueOf(str.substring(0, 1))),
-                Integer.valueOf(Integer.valueOf(str.substring(1, 2))),
-                Integer.valueOf(Integer.valueOf(str.substring(2, 3))),
-                Integer.valueOf(Integer.valueOf(str.substring(3, 4)))
-        };
+        InputValidator.validate(playerInput);
     }
 }
