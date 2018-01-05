@@ -32,8 +32,10 @@ public class Code {
                 continue;
             if (isIgnoredPosition(j, positionsToIgnore))
                 continue;
-            if (peg == pegs[j])
+            if (peg == pegs[j]) {
+                positionsToIgnore.add(j);
                 return true;
+            }
         }
         return false;
     }

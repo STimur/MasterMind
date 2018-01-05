@@ -22,5 +22,6 @@ public class CodeShould {
         assertThat(new Code(intArray(0, 0, 0, 1)).guess(intArray(2, 2, 2, 0)), is(intArray(0, 1)));
         assertThat(new Code(intArray(1, 1, 1, 0)).guess(intArray(0, 2, 2, 2)), is(intArray(0, 1)));
         assertThat(new Code(intArray(4, 5, 0, 4)).guess(intArray(0, 0, 0, 0)), is(intArray(1, 0)));
+        assertThat(new Code(intArray(4, 3, 4, 2)).guess(intArray(2, 2, 1, 1)), is(intArray(0, 1)));
     }
 }
