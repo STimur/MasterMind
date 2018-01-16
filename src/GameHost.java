@@ -3,8 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class GameHost {
-    private final Game game;
-    private final BufferedReader bufferedReader;
+    protected Game game;
+    protected BufferedReader bufferedReader;
     private String playerInput;
 
     public GameHost() {
@@ -16,7 +16,7 @@ public class GameHost {
         new GameHost().start();
     }
 
-    private void start() {
+    public void start() {
         while (!game.isFinished)
             interactWithPlayer();
         congratulatePlayer();

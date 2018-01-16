@@ -8,12 +8,6 @@ public class GameShould {
         return ints;
     }
 
-    private class GameMock extends Game {
-        public GameMock() {
-            code = new Code(intArray(1, 2, 3, 4));
-        }
-    }
-
     @Test
     public void
     not_be_finished_after_creation() {
