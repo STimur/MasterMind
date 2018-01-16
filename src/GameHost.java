@@ -45,6 +45,7 @@ public class GameHost {
 
     private void printGuessResult() {
         int[] answer = game.guess(InputParser.parse(playerInput));
+        System.out.println("Your guess is: " + playerInput);
         System.out.printf("wellplaced: %d misplaced: %d\n\n", answer[0], answer[1]);
     }
 

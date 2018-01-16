@@ -19,7 +19,8 @@ public class PlayGameFeature {
 
     @Before
     public void setUp() throws Exception {
-        inputStream = new ByteArrayInputStream(("1122\n" +
+        inputStream = new ByteArrayInputStream((
+                "1122\n" +
                 "3322\n" +
                 "3232\n" +
                 "2332\n" +
@@ -38,32 +39,40 @@ public class PlayGameFeature {
     play_game() {
         GameHost gameHost = new GameHostMock();
         gameHost.start();
-        assertThat(outputStream.toString(),
-                is("Enter you guess:\n" +
-                        "wellplaced: 0 misplaced: 1\n" +
-                        "\n" +
-                        "Enter you guess:\n" +
-                        "wellplaced: 1 misplaced: 1\n" +
-                        "\n" +
-                        "Enter you guess:\n" +
-                        "wellplaced: 0 misplaced: 2\n" +
-                        "\n" +
-                        "Enter you guess:\n" +
-                        "wellplaced: 2 misplaced: 0\n" +
-                        "\n" +
-                        "Enter you guess:\n" +
-                        "wellplaced: 2 misplaced: 0\n" +
-                        "\n" +
-                        "Enter you guess:\n" +
-                        "wellplaced: 3 misplaced: 0\n" +
-                        "\n" +
-                        "Enter you guess:\n" +
-                        "wellplaced: 2 misplaced: 2\n" +
-                        "\n" +
-                        "Enter you guess:\n" +
-                        "wellplaced: 4 misplaced: 0\n" +
-                        "\n" +
-                        "\n" +
-                        "Congratulations! You broke the code.\n"));
+        assertThat(outputStream.toString(), is(
+                "Enter you guess:\n" +
+                "Your guess is: 1122\n" +
+                "wellplaced: 0 misplaced: 1\n" +
+                "\n" +
+                "Enter you guess:\n" +
+                "Your guess is: 3322\n" +
+                "wellplaced: 1 misplaced: 1\n" +
+                "\n" +
+                "Enter you guess:\n" +
+                "Your guess is: 3232\n" +
+                "wellplaced: 0 misplaced: 2\n" +
+                "\n" +
+                "Enter you guess:\n" +
+                "Your guess is: 2332\n" +
+                "wellplaced: 2 misplaced: 0\n" +
+                "\n" +
+                "Enter you guess:\n" +
+                "Your guess is: 2344\n" +
+                "wellplaced: 2 misplaced: 0\n" +
+                "\n" +
+                "Enter you guess:\n" +
+                "Your guess is: 2355\n" +
+                "wellplaced: 3 misplaced: 0\n" +
+                "\n" +
+                "Enter you guess:\n" +
+                "Your guess is: 2305\n" +
+                "wellplaced: 2 misplaced: 2\n" +
+                "\n" +
+                "Enter you guess:\n" +
+                "Your guess is: 2350\n" +
+                "wellplaced: 4 misplaced: 0\n" +
+                "\n" +
+                "\n" +
+                "Congratulations! You broke the code.\n"));
     }
 }
